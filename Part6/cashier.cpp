@@ -29,13 +29,13 @@ void cashier()
     cin >> price;
     
     float subtotal = price * quantity;
-    
+    cout << fixed << setprecision(2);
 	cout << "\n\nSerendipity Book Sellers\n\nDate: " << date << endl;
 	cout << "\nQty ISBN           Title                   Price     Total" << endl;
 	cout << "____________________________________________________________" << endl;
 	cout << quantity << "   " << isbn << "  " << title << "     $ " << price << "   $ " << subtotal << endl;
-	cout << "\n\n            Subtotal                                 $ " << subtotal << endl;
-	cout << "            Tax                                      $ " << subtotal * 0.06 << endl;
-	cout << "            Total                                    $ " << subtotal * 0.06 + subtotal << endl;
+	cout << "\n\n            Subtotal                                 $ " << setw(6) << subtotal << endl;
+	cout << "            Tax                                      $ " << setw(6) << subtotal * 0.06 << endl;
+	cout << "            Total                                    $ " << setw(6) << subtotal * 0.06 + subtotal << endl;
 	cout << "\nThank You for Shopping at Serendipity!" << endl;
 }
