@@ -22,10 +22,10 @@ double retail[SIZE];
 using namespace std;
 
 int main(){
-    int choice = 0;
-
-    while (choice < 1 || choice > 4)
-    {
+    int choice;
+    while (choice != 4) {
+        choice = 0;
+        
         cout << "\t\tSerendipity Booksellers" << endl;
         cout << "\t\t   Main Menu" << endl;
         cout << "1. Cashier Module" << endl;
@@ -33,34 +33,34 @@ int main(){
         cout << "3. Report Module" << endl;
         cout << "4. Exit" << endl;
         cout << "\nEnter Your Choice: ";
-        cin >> choice;
-
-        if (choice < 1 || choice > 4)
+        while (choice < 1 || choice > 4)
         {
-            cout << "\nYou must enter a number between 1 and 4.\n";
-            cout << "Please try again.\n\n";
+            cin >> choice;
+            if (choice < 1 || choice > 4)
+            {
+                cout << "\nYou must enter a number between 1 and 4.\n";
+                cout << "Please try again.\n\n";
+            }
         }
 
+        switch (choice)
+        {
+            case 1:
+                cin.ignore();
+                cashier();
+                break;
+            case 2:
+                invMenu();
+                break;
+            case 3:
+                reports();
+                break;
+            case 4:
+                cout << "\nYou selected item 4.\n";
+                break;
+        }
+        cout << endl << endl;
     }
-
-    switch (choice)
-    {
-        case 1:
-            cin.ignore();
-            cashier();
-            break;
-        case 2:
-            invmenu();
-            break;
-        case 3:
-            reports();
-            break;
-        case 4:
-            cout << "\nYou selected item 4.\n";
-            break;
-    }
-    cout << endl << endl;
-    
 
     return 0;
 }

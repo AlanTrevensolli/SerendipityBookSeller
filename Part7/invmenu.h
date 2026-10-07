@@ -1,7 +1,7 @@
 #ifndef INVMENU_H
 #define INVMENU_H
 
-void invmenu();
+void invMenu();
 
 void lookUpBook();
 void addBook();
