@@ -55,10 +55,10 @@ void invmenu(){
 
 void lookUpBook()
 {
+    cin.ignore();
     cout << "\nWhat is the title of the book you would like to look up? ";
     string title;
     getline(cin, title);
-    cin.ignore();
     for (int i = 0; i < SIZE; i++)
     {
         if (bookTitle[i] == title)
