@@ -20,11 +20,12 @@ extern double retail[SIZE];
 
 void invMenu(){
     int choice = 0;
-    // while (choice != 5){
+    while (choice != 5){
         cout << "  Serendipity Booksellers" << endl;
         cout << "    Inventory Database" << endl;
         cout << "\n1.  Look Up a Book\n2.  Add a Book\n3.  Edit a Book's Record\n4.  Delete a Book\n5.  Return to the Main Menu" << endl;
         cout << "\nEnter Your Choice: ";
+        cin >> choice;
         while (choice < 1 || choice > 5)
         {
             cin >> choice;
@@ -51,7 +52,7 @@ void invMenu(){
             case 5:
                 break;
         }
-    // }
+    }
 }
 
 void lookUpBook()
@@ -60,6 +61,7 @@ void lookUpBook()
     cout << "\nWhat is the title of the book you would like to look up? ";
     string title;
     getline(cin, title);
+    cin.ignore(); // Clear the input buffer
     for (int i = 0; i < SIZE; i++)
     {
         if (bookTitle[i] == title)
